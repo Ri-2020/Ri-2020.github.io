@@ -24,7 +24,7 @@
       }
       .spancont{
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
       }
     </style>
@@ -72,7 +72,7 @@
       
     </div>
     
-    <div id="features" class="bg-danger shadow-sm text-white border border-1 m-2 p-2 ">
+    <div id="features" class="bg-danger shadow text-white border border-1 m-2 p-2 ">
       <h3>Provides news in two languages</h3>
       <!-- <p>HINDI & ENGLISH</p> -->
       <ul>
@@ -86,12 +86,12 @@
       <ul>
         <li>Serach the news of your intrest.</li>
         <li>See some basic news of genral topic.</li>
-        <li>Website is made for indians so Hindi is the main language.</li>
+        <!-- <li>Website is made for Indians so Hindi is the main language.</li> -->
         <li>Sharing news option is coming soon...</li>
         <li>Stay with us we are sending you the news</li>
       </ul>
     </div>
-    <div id="about" class="bg-danger shadow-sm text-white border border-1 m-2 p-2 ">
+    <div id="about" class="bg-danger shadow text-white border border-1 m-2 p-2 ">
       <h3>Website Created by</h3>
       <p>Rohit Gupta</p>
       <hr>
@@ -102,7 +102,7 @@
       <h3>Warning</h3>
       <P>All the news flashing on this page are being forwarded by an API(free news API by ( Newscatcher API)). I have no control on waht news is flashing on this site.</P>
     </div>
-    <div id="about" class="bg-danger shadow-sm text-white border border-1 m-2 p-2 ">
+    <div id="about" class="bg-danger shadow text-white border border-1 m-2 p-2 ">
       <hr>
       <h2>Thanks To Visit</h2>
     </div>
@@ -124,7 +124,7 @@ function textfinder() {
     if(result == ""){
         result = "Default"; 
     }
-    result.innerHTML = `Showing results for "${text}"`
+    result.innerHTML = `<h2>Showing results for "${text}"</h2>`
 
     let q = "";
 
@@ -154,11 +154,12 @@ function getNews() {
     xhr.withCredentials = true;
     
     let q = textfinder();
-    let arr = ["latest" , "corona" , "india"  , "movies" , "bollywood" , "business"  , "education", "sports" , "technology" , "tech", "smartphones" ];
+    let arr = ["latest" , "corona" , "india"  , "movies" , "bollywood" , "business"  , "education", "sports" , "technology" , "tech", "gadgets", "food" ];
     if (q == "") {
-        q = arr[Math.floor(Math.random() * (10 - 0)) + 0];
+        index = Math.floor((Math.random() * 11) + 1);
+        q = arr[index];
         var result = document.getElementById('results');
-        result.innerHTML = `<h2>Showing results for "${q}"</h2>`
+        result.innerHTML = `<h2>Showing results for "${q} and ${index}"</h2>`
     }
     let lang = document.getElementById("language").value
     var url = `https://free-news.p.rapidapi.com/v1/search?q=${q}&lang=${lang}&page_size=25`
@@ -176,7 +177,7 @@ function getNews() {
                 newstoAdd += `
             <div class="shadow-sm bg-white h-3 m-3" style="border: 4em; width: auto; max-width: 500px;" id="DataBox">
         <div class="d-flex flex-wrap">
-            <img class="w-100 brr" src="${articles[news].media}" class="container" alt="NEWS IMAGE">
+            <img class="w-100 brr" height="250px" src="${articles[news].media}" class="container" alt="NEWS IMAGE">
         </div>
         <div class="container ">
             <h2 class="p-1">${articles[news].title}</h2>
