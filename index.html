@@ -188,7 +188,7 @@ function getNews() {
             <hr>
             <p>${articles[news].summary}</p> 
             <a target="new" href="${articles[news].link}" class="btn btn-primary">Read Full Article</a>
-            <a href="whatsapp://send?text=${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share">Share via Whatsapp</a>
+            <a href="whatsapp://send?text=${articles[news].title} ${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share">Share via Whatsapp</a>
             <hr>
         </div>
     </div>
