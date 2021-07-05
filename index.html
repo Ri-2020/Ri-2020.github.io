@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>TOP INDIAN NEWS</title>
     <style>
       .brr{
@@ -26,6 +26,10 @@
         display: flex;
         /* justify-content: center; */
         align-items: center;
+      }
+      .card_buttons{
+        display: flex;
+        justify-content: space-between;
       }
     </style>
   </head>
@@ -187,8 +191,10 @@ function getNews() {
             </div>
             <hr>
             <p>${articles[news].summary}</p> 
-            <a target="new" href="${articles[news].link}" class="btn btn-primary">Read Full Article</a>
-            <a href="whatsapp://send?text=${articles[news].title} ${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share">Share via Whatsapp</a>
+            <div class="card_buttons">
+              <a target="new" href="${articles[news].link}" class="btn btn-primary">Read Full Article</a>
+              <a href="whatsapp://send?text=${articles[news].title} ${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share"> <i class="fa fa-whatsapp"></i> </a>
+            </div>
             <hr>
         </div>
     </div>
