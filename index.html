@@ -57,13 +57,13 @@
     
     <div id="top" class="search m-3 border border-1 bg-dark p-3 rounded">
         <div class="d-flex flex-wrap">
-            <input class="form-control me-2  onfocus" id="searchText" type="text" placeholder="Search News">
-            <select class="form-select m-2 onfocus" id="language">
-              <option value="hi" selected>Hindi</option>
-              <option value="en" >English</option>
-            </select>
-            <button class="btn btn-outline-success m-2" id="searchButton" >Search</button>
-          </div>
+          <input class="form-control me-2  onfocus" id="searchText" type="text" placeholder="Search News">
+          <select class="form-select m-2 onfocus" id="language">
+            <option value="hi" selected>Hindi</option>
+            <option value="en" >English</option>
+          </select>
+          <button class="btn btn-outline-success m-2" id="searchButton" >Search</button>
+        </div>
     </div>
     <div class="p-3 m-3" id="results">
       
@@ -124,7 +124,7 @@ function textfinder() {
     if(result == ""){
         result = "Default"; 
     }
-    result.innerHTML = `<h2>Showing results for "${text}"</h2>`
+    result.innerHTML = `<h2>Showing news for keyword "${text}"</h2>`
 
     let q = "";
 
@@ -154,12 +154,12 @@ function getNews() {
     xhr.withCredentials = true;
     
     let q = textfinder();
-    let arr = ["latest" , "corona" , "india"  , "movies" , "bollywood" , "business"  , "education", "sports" , "technology" , "tech", "gadgets", "food" ];
-    if (q == "") {
+    let arr = ["latest" , "corona" , "india"  , "movies" , "bollywood" , "business"  , "education", "sports" , "technology" , "Election", "gadgets", "food" ];
+    if (q == "" || q== " ") {
         index = Math.floor((Math.random() * 11) + 1);
         q = arr[index];
         var result = document.getElementById('results');
-        result.innerHTML = `<h2>Showing results for "${q} and ${index}"</h2>`
+        result.innerHTML = `<h2>Showing news for keyword "${q}"</h2>`
     }
     let lang = document.getElementById("language").value
     var url = `https://free-news.p.rapidapi.com/v1/search?q=${q}&lang=${lang}&page_size=25`
@@ -188,6 +188,7 @@ function getNews() {
             <hr>
             <p>${articles[news].summary}</p> 
             <a target="new" href="${articles[news].link}" class="btn btn-primary">Read Full Article</a>
+            <a href="whatsapp://send?text=${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share">Share via Whatsapp</a>
             <hr>
         </div>
     </div>
