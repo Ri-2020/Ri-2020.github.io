@@ -100,6 +100,21 @@ main{
     font-size: 2em;
     padding: 1em 0em;
 }
+.centerdiv{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.nextaction{
+    background-color: aquamarine;
+    color: blueviolet;
+    padding: 1.2em .6em;
+}
+
+.he{
+    font-weight: 700;
+}
 
 @media only screen and (max-width: 800px) {
     .warning{
