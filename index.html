@@ -1,298 +1,47 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>TOP INDIAN NEWS</title>
-    <style>
-      .brr{
-        /* border-radius: .2em .2em 0em 0em; */
-        width: 100%;
-        margin: 0px;
-      }
-      .mxwmy{
-        max-width: 15em;
-        overflow:hidden;
-      }
-      .badge{
-        margin: .5em;
-      }
-      .spancont{
-        display: flex;
-        /* justify-content: center; */
-        align-items: center;
-      }
-      .card_buttons{
-        display: flex;
-        justify-content: space-between;
-      }
-      .my-sh{
-        box-shadow: -2px 0px 22px -12px;
-      }
-    </style>
-  </head>
-  <body class="bg-light">
-    <nav class=" shadow-sm navbar sticky-top navbar-expand-lg navbar-light bg-light ">
-        <div class="container-fluid">
-          <a class="navbar-brand text-black" href="#">TOP INDIAN NEWS</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active text-black" aria-current="page" href="#top">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-black" href="#footer">Features</a>
-                
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-black" href="#footer">About</a>
-                
-              </li>
-              
-            </ul>
-          </div>
-        </div>
-      </nav>
-    
-    <div id="top" class="search m-3 border bg-dark p-2">
-        <div class="d-flex flex-wrap">
-          <input class="form-control me-2 onfocus" id="searchText" type="text" placeholder="Search News">
-          <select class="form-select m-2 onfocus" id="language">
-            <option value="hi" selected>Hindi</option>
-            <option value="en" >English</option>
-          </select>
-          <button class="btn btn-secondary m-2 noround" id="searchButton" >Search News</button>
-        </div>
-    </div>
-    <div class="p-2 m-2" id="results">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="Libraries/matter.js"></script>
+  <script src="Libraries/p5.js"></script>
+  <script src="Objects/Slingshot.js"></script>
+  <script src="Objects/Box.js"></script>
+  <script src="Objects/Bird.js"></script>
+  <script src="Objects/Ground.js"></script>
+  <!-- <script src="../addons/p5.sound.js"></script> -->
+  <script src="sketch.js"></script>
+</head>
+
+<body>
+  <main>
+  </main>
+  <div class="text">
+    <div class="title">
+    Clear Anger
+  </div>
+  
+  <div class="result">
+    <div>Anger Level:- </div>
+    <div class="update"></div>
+  </div>
+  <div class="controls">
+    <ul>
       
-    </div>
-    <div id="toAdd" class="d-felx flex-wrap" style="width: auto; display: flex; justify-content: center;">
-      
-    </div>
-    <center>
-      <button class="btn btn-outline-success m-3" id="MoreNewsBtn" >More News</button>
-    </center>
-    <footer id="footer" class="bg-light text-black text-center text-lg-start mt-3 my-sh">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!--Grid row-->
-        <div class="row">
-          <!--Grid column-->
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h3>Website Created by</h3>
-      <p>Rohit Gupta</p>
-      <hr>
-      <h3>Contact</h3>
-      <p>send the suggstions on email address: <br><b>rohitgupta111abcd@gmail.com</b></p>
+      <li>Click and Drag the ball to throw the ball</li>
+      <li>Press "Space" to reset the Happy ball</li>
+      <li>Shoot all the anger and let only Happiness in the frame</li>
+    </ul>
+  </div>
+  </div>
+</div>
 
-      <hr>
-      <h3>Warning</h3>
-      <P>All the news flashing on this page are being forwarded by an API(free news API by ( Newscatcher API)). I have no control on what news is flashing on this site.</P>
-          </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Languages Supported</h5>
-    
-            <ul class="list-unstyled mb-0">
-              <li>Hindi</li>
-              <li>Engilish</li>
-              <li>More coming soon</li>
-            </ul>
-          </div>
-          <!--Grid column-->
-    
-          <!--Grid column-->
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase mb-0">Features</h5>
-      <ul class="list-unstyled">
-        <li>Serach the news of your intrest.</li>
-        <li>See some basic news of genral topic.</li>
-        <li>Sharing news option is coming soon...</li>
-        <li>Stay with us we are sending you the news</li>
-      </ul>
-          </div>
-          <!--Grid column-->
-        </div>
-        <!--Grid row-->
-      </div>
-      <!-- Grid container -->
-    
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        <a class="text-white " href="ri-2020.github.io">NEWS</a>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-      
+  <div class="hide">
+    <h1>Loading New Game</h1>
+  </div>
+</body>
 
-let btn = document.getElementById('searchButton');
-let MoreNewsBtn = document.getElementById('MoreNewsBtn');
-
-btn.addEventListener("click", getNews);
-MoreNewsBtn.addEventListener("click", getmoreNews);
-
-function textfinder() {
-
-    let text = document.getElementById('searchText').value;
-
-    var result = document.getElementById('results');
-    if(result == ""){
-        result = "Default"; 
-    }
-    result.innerHTML = `<h2>Showing news for keyword "${text}"</h2>`
-
-    let q = "";
-
-
-    for (var i = 0; i < text.length; i++) {
-        if (text[i] == " " && i != (text.length - 1)) {
-            q = q + "%20";
-
-        }
-        else if (text[i] == " " && i == (text.length - 1)) {
-            break;
-        }
-        else {
-            q = q + text[i];
-        }
-    }
-
-    return q;
-}
-
-function getmoreNews() {
-    const data = null;
-    const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    
-    let q = "";
-    let arr = ["latest" , "corona" , "india"  , "movies" , "bollywood" , "business"  , "education", "sports" , "technology" , "Election", "gadgets", "food", "games" ];
-    if (q == "" || q== " ") {
-        index = Math.floor((Math.random() * 12) + 1);
-        q = arr[index];
-        var result = document.getElementById('results');
-        result.innerHTML = `<h2>Showing news for keyword "${q}"</h2>`
-    }
-    let lang = document.getElementById("language").value
-    var url = `https://free-news.p.rapidapi.com/v1/search?q=${q}&lang=${lang}&page_size=25`
-    xhr.addEventListener("readystatechange", function () {
-
-        
-        
-        if (this.readyState === this.DONE) {
-            let ToAdd = document.getElementById("toAdd");
-            let json = JSON.parse(this.responseText);
-            let articles = json.articles;
-            let newstoAdd = "";
-            // console.log(articles);
-            for (news in articles) {
-                newstoAdd += `
-            <div class="shadow-sm bg-white h-3 m-3" style="border: 4em; width: auto; max-width: 500px;" id="DataBox">
-        <div class="d-flex flex-wrap">
-            <img class="w-100 brr" height="250px" src="${articles[news].media}" class="container" alt="NEWS IMAGE">
-        </div>
-        <div class="container ">
-            <h2 class="p-1">${articles[news].title}</h2>
-            <div class="spancont">
-              <span class="badge bg-secondary">${articles[news].published_date}</span>
-              <span class="badge bg-secondary mxwmy">${articles[news].rights}</span>   
-            </div>
-            <hr>
-            <p>${articles[news].summary}</p> 
-            <div class="card_buttons">
-              <a target="new" href="${articles[news].link}" class="btn btn-primary">Read Full Article</a>
-              <a href="whatsapp://send?text=${articles[news].title} ${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share"> <i class="fa fa-whatsapp"></i> </a>
-            </div>
-            <hr>
-        </div>
-    </div>
-            `
-            }
-            ToAdd.innerHTML += newstoAdd;
-        }
-    });
-
-    xhr.open("GET", url);
-    xhr.setRequestHeader("x-rapidapi-key", "1f95df591cmsh191fea0e7e03150p12e4edjsn93f099e776b0");
-    xhr.setRequestHeader("x-rapidapi-host", "free-news.p.rapidapi.com");
-
-    xhr.send(data);
-}
-
-
-function getNews() {
-    const data = null;
-    const xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    
-    let q = textfinder();
-    let arr = ["latest" , "corona" , "india"  , "movies" , "bollywood" , "business"  , "education", "sports" , "technology" , "Election", "gadgets", "food" ];
-    if (q == "" || q== " ") {
-        index = Math.floor((Math.random() * 11) + 1);
-        q = arr[index];
-        var result = document.getElementById('results');
-        result.innerHTML = `<h2>Showing news for keyword "${q}"</h2>`
-    }
-    let lang = document.getElementById("language").value
-    var url = `https://free-news.p.rapidapi.com/v1/search?q=${q}&lang=${lang}&page_size=25`
-    xhr.addEventListener("readystatechange", function () {
-
-        
-        
-        if (this.readyState === this.DONE) {
-            let ToAdd = document.getElementById("toAdd");
-            let json = JSON.parse(this.responseText);
-            let articles = json.articles;
-            let newstoAdd = "";
-            // console.log(articles);
-            for (news in articles) {
-                newstoAdd += `
-            <div class="shadow-sm bg-white h-3 m-3" style="border: 4em; width: auto; max-width: 500px;" id="DataBox">
-        <div class="d-flex flex-wrap">
-            <img class="w-100 brr" height="250px" src="${articles[news].media}" class="container" alt="NEWS IMAGE">
-        </div>
-        <div class="container ">
-            <h2 class="p-1">${articles[news].title}</h2>
-            <div class="spancont">
-              <span class="badge bg-secondary">${articles[news].published_date}</span>
-              <span class="badge bg-secondary mxwmy">${articles[news].rights}</span>   
-            </div>
-            <hr>
-            <p>${articles[news].summary}</p> 
-            <div class="card_buttons">
-              <a target="new" href="${articles[news].link}" class="btn btn-primary">Read Full Article</a>
-              <a href="whatsapp://send?text=${articles[news].title} ${articles[news].link}" class="btn btn-success"data-action="share/whatsapp/share"> <i class="fa fa-whatsapp"></i> </a>
-            </div>
-            <hr>
-        </div>
-    </div>
-            `
-            }
-            ToAdd.innerHTML = newstoAdd;
-        }
-    });
-
-    xhr.open("GET", url);
-    xhr.setRequestHeader("x-rapidapi-key", "1f95df591cmsh191fea0e7e03150p12e4edjsn93f099e776b0");
-    xhr.setRequestHeader("x-rapidapi-host", "free-news.p.rapidapi.com");
-
-    xhr.send(data);
-}
-
-getNews();
-    </script>
-    
-  </body>
 </html>
