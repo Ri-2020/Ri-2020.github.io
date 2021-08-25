@@ -77,6 +77,23 @@ main{
     margin: 0px .2em;
 }
 
+.updateRed i:last-child{
+    animation-name: flicker;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flicker {
+    0%{
+        filter: opacity(20%);
+    }
+    100%{
+        filter: opacity(100);
+    }
+}
+
 .hide{
     position: fixed;
     background-color:rgba(0, 0, 0, 0.596);
