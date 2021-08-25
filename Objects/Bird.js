@@ -6,7 +6,10 @@ class Bird{
         }
         this.body = Bodies.circle(x, y, r , options);
         Matter.Body.setMass(this.body , this.body.mass*4);
+        this.body.collisionFilter.mask  = 3;
+        this.body.collisionFilter.category = 3;
         World.add(world , this.body);
+
         this.r = r;
     }
 
