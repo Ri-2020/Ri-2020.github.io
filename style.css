@@ -29,23 +29,30 @@ main{
 }
 .result{
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     background-color: bisque;
     margin: .3em;
     margin-left: 0px;
-    padding: 1em;
+    padding: 1em .5em;
     font-weight: 700;
     font-size: 1.5em;
-    width: 170px;
+    width: 300px;
     color: blueviolet;
 
 }
 
 .update{
-    color: red;
-    font-weight: bolder;
+    margin-left: .3em;
 }
+
+.update i{
+    color: black;
+    font-weight: bolder;
+    margin: 0em .1em;
+
+}
+
 
 .controls{
 
@@ -106,19 +113,28 @@ main{
     align-items: center;
 }
 
+.refresh{
+    background-color: transparent;
+    color: blueviolet;
+    font-weight: 700;
+    border: none;
+    font-size: 2em;
+}
+
 .nextaction{
     background-color: aquamarine;
     color: blueviolet;
     padding: 1.2em .6em;
 }
 
-.he{
+/* .he{
     font-weight: 700;
-}
+} */
 
 @media only screen and (max-width: 800px) {
     .warning{
         display: flex;
+        width: 100vw;
         flex-direction: column;
         color: rgb(251, 255, 0);
     }
@@ -126,6 +142,7 @@ main{
 @media only screen and (max-width: 1300px) {
     body{
         flex-direction: column;
+        margin-top: 30px;
     }
     main{
         margin-right: inherit;
