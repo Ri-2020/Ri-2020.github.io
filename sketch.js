@@ -11,6 +11,8 @@ let MouseConstraint = Matter.MouseConstraint;
 let slingShot;
 let button;
 let flag = 0
+let birdRemain;
+
 // let nxtAction = document.querySelector(".updateAction");
 
 
@@ -30,7 +32,7 @@ function setup() {
   const canvas = createCanvas(700, 400);
   engine = Engine.create();
   world = engine.world;
-
+  birdRemain = 4;
 
   ground = new Ground(width / 2, height - 20, width + 5, 40);
   for (var i = 0; i < 3; i++) {
@@ -52,18 +54,22 @@ function setup() {
 
 
 function birdRefersh(){
+  if( slingShot.sling.bodyB == null){
   World.remove(world, bird.body);
   bird = new Bird(150, 300, 25);
   slingShot = new SlingShot(150, 250, bird.body);
+  birdRemain = birdRemain-1;
+  }
 }
 
 
 function keyPressed() {
 
-    if (key == " ") {
+    if (key == " " && slingShot.sling.bodyB == null) {  
       World.remove(world, bird.body);
       bird = new Bird(150, 300, 25);
       slingShot = new SlingShot(150, 250, bird.body);
+      birdRemain = birdRemain-1;
       // nxtAction.innerText = "Click & Drag the Ball";
     }
     else {
@@ -83,6 +89,7 @@ function mouseReleased() {
   setTimeout(() => {
     slingShot.fly();
   }, 20);
+  
   // nxtAction.innerText = "Press 'Space' Button";
 }
 }
@@ -104,11 +111,19 @@ function draw() {
   for(var i =0 ; i<boxes.length; i++){
     update.innerHTML += '<i class="fa fa-heart"> </i>'
   }
+  let updateRed = document.querySelector(".updateRed");
+  updateRed.innerHTML = '';
+  for(var i =0 ; i<birdRemain; i++){
+    updateRed.innerHTML += '<i class="fa fa-heart"> </i>'
+  }
 
+  
 
-  if (boxes.length == 0) {
+  if (boxes.length == 0 || birdRemain == 0) {
+    
     var won = document.querySelector(".title");
-    won.innerText = "You Won!!"
+    if(boxes.length!=0 ){ won.innerText = "You Loose!!" }
+    else {won.innerText = "You Won!!"}
 
     setTimeout(() => {
       document.querySelector('.hide').style.display = "flex";
