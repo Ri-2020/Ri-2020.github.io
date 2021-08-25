@@ -4,8 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clear Anger: Rohit Gupta</title>
+  <title>p5.js example</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="Libraries/matter.js"></script>
   <script src="Libraries/p5.js"></script>
   <script src="Objects/Slingshot.js"></script>
@@ -25,9 +26,7 @@
   </div>
   <div class="centerdiv">
     <div class="nextaction">
-      <div class="he">Hi Player</div>
-      <div class="updateAction">Are You Ready?</div>
-      
+      <button class="refresh" onclick="birdRefersh()"> <i class="fa fa-refresh"></i> Refresh Ball</button>      
     </div>
     <div class="result">
       <div>Anger Level:- </div>
@@ -40,9 +39,9 @@
     <ul>
       
       <li>Click and Drag the ball to throw the ball</li>
-      <li>Press "Space" to reset the Happy ball</li>
+      <li>Press "Space" or click refresh button to reset the Happy ball</li>
       <li>Shoot all the anger and let only Happiness in the frame</li>
-      <li>Make Anger Level 0 with your single Smile Hitting again and again</li>
+      <li>Make anger Level 0 with your single smile hitting againg and again</li>
     </ul>
   </div>
   </div>
@@ -56,7 +55,8 @@
   </div>
   <div class="warning">
     <h1>Warning</h1>
-    <h2>Made for wide screens</h2>
+    <h2>Made for wide screens </h2>
+    <h2>Try ROTATE SCREEN or DESKTOP SITE </h2>
   </div>
   <!-- <button onclick="togglePlay">Play/Pause</button> -->
 </body>
