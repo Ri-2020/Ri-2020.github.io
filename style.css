@@ -63,6 +63,20 @@ main{
 
 }
 
+.Lives{
+    font-size: 1.8em;
+}
+
+.updateRed{
+    color: red;
+    font-weight: bolder;
+    margin: 0em .1em;
+}
+
+.updateRed i{
+    margin: 0px .2em;
+}
+
 .hide{
     position: fixed;
     background-color:rgba(0, 0, 0, 0.596);
