@@ -136,7 +136,7 @@ function mousePressed() {
 function mouseReleased() {
   var a = mouseX;
   var b = mouseY;
-  if (inX > 0 && inY > 0 && inX < width && inY < height && a>0 && b>0 && a<300 && b<height  ) {
+  if (inX > 0 && inY > 0 && inX < width && inY < height && a>-200 && b>0 && a<300 && b<height+100  ) {
     setTimeout(() => {
       slingShot.fly();
     }, 20);
