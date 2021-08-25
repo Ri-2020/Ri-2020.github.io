@@ -54,7 +54,7 @@ function setup() {
 
 
 function birdRefersh(){
-  if( slingShot.sling.bodyB == null){
+  if( slingShot.sling.bodyB == null && birdRemain>0){
   World.remove(world, bird.body);
   bird = new Bird(150, 300, 25);
   slingShot = new SlingShot(150, 250, bird.body);
@@ -65,7 +65,7 @@ function birdRefersh(){
 
 function keyPressed() {
 
-    if (key == " " && slingShot.sling.bodyB == null) {  
+    if (key == " " && slingShot.sling.bodyB == null && birdRemain>0) {  
       World.remove(world, bird.body);
       bird = new Bird(150, 300, 25);
       slingShot = new SlingShot(150, 250, bird.body);
